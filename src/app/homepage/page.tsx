@@ -1,6 +1,6 @@
 async function getData() {
   const res = await fetch(
-    'https://api.themoviedb.org/3/movie/550?api_key=c5551a99621b6393dda5815d7cc6bc2b'
+    `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}`
   )
 
   if (!res.ok) {
@@ -14,5 +14,7 @@ export default async function Page() {
   const data = await getData()
 
   console.log(data)
-  return <h1 className="text-3xl uppercase underline">Hello test</h1>
+  return data.results.map((item: any) => (
+    <h1 className="text-lg uppercase underline text-gray-700">{item.title}</h1>
+  ))
 }

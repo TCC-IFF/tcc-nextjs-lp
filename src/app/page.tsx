@@ -16,7 +16,7 @@ async function getData() {
 export default async function Home() {
   const data = await getData()
   return (
-    <div className="flex flex-col w-full h-screen bg-slate-900">
+    <div className=" flex-col inline-block w-full h-screen bg-slate-900">
       <Navbar />
       <Header data={data} />
     </div>

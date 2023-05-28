@@ -14,22 +14,24 @@ export const Navbar = () => {
     }
   ]
   return (
-    <nav className="flex w-full h-20 bg-slate-800 items-center px-20 justify-between">
-      <div>
-        <h1 className="text-rose-500 font-bold font-mono text-xl tracking-wide">
-          CineTCC
-        </h1>
-      </div>
-      <div className="flex space-x-4">
-        {menuItems.map(item => (
-          <a
-            key={item.link}
-            className="text-gray-300 hover:text-rose-500"
-            href={item.link}
-          >
-            {item.label}
-          </a>
-        ))}
+    <nav className="fixed left-0 top-0 z-40 flex w-full h-16 min-h-16 bg-slate-800 items-center px-20 justify-center ">
+      <div className="flex w-full justify-between max-w-7xl">
+        <div>
+          <h1 className="text-rose-500 font-bold font-mono text-xl tracking-wide">
+            CineTCC
+          </h1>
+        </div>
+        <div className="flex space-x-8">
+          {menuItems.map(item => (
+            <a
+              key={item.link}
+              className="text-gray-300 hover:text-rose-500"
+              href={item.link}
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
       </div>
     </nav>
   )

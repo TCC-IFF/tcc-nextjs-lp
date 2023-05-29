@@ -1,10 +1,17 @@
-import { Header, Navbar } from '@/components/home'
+import { Header, Navbar, Playing } from '@/components/home'
+import { NowPlayingResponse } from '@/domains/types/tmdb'
 
-async function getData() {
-  const REPRISE_MOVIE_ID = '502356'
-  const res = await fetch(
-    `https://api.themoviedb.org/3/movie/502356/images?api_key=${process.env.TMDB_API_KEY}`
-  )
+async function getData(): Promise<NowPlayingResponse> {
+  const url =
+    'https://api.themoviedb.org/3/movie/now_playing?language=pt-br&page=1&region=BR'
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${process.env.TMDB_API_KEY}`
+    }
+  }
+  const res = await fetch(url, options)
 
   if (!res.ok) {
     throw new Error('Failed to fetch data')
@@ -14,11 +21,12 @@ async function getData() {
 }
 
 export default async function Home() {
-  const data = await getData()
+  const playingMoviesData = await getData()
   return (
     <div className=" flex-col inline-block w-full h-screen bg-slate-900">
       <Navbar />
-      <Header data={data} />
+      <Header />
+      <Playing playingMovies={playingMoviesData.results} />
     </div>
   )
 }

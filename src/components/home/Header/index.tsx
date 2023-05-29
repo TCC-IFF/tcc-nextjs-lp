@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export const Header = () => {
   return (
-    <section className="flex flex-col w-full justify-center items-center h-screen bg-gray-800 relative">
+    <section className="flex flex-col w-full justify-center items-center h-screen bg-black relative">
       <Image
         src="https://www.themoviedb.org/t/p/original/kVUfN0ZMuoSAc1FturM7P7PYel6.jpg"
         alt="Banner"

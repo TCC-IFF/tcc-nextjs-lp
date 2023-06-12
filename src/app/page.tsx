@@ -1,4 +1,4 @@
-import { Header, Navbar, Playing } from '@/components/home'
+import { Header, Navbar, Newsletter, Playing } from '@/components/home'
 import { NowPlayingResponse } from '@/domains/types/tmdb'
 
 async function getData(): Promise<NowPlayingResponse> {
@@ -27,6 +27,7 @@ export default async function Home() {
       <Navbar />
       <Header />
       <Playing playingMovies={playingMoviesData.results} />
+      <Newsletter />
     </div>
   )
 }

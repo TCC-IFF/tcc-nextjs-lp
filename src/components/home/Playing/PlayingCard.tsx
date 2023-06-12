@@ -4,10 +4,12 @@ import { cinemaSessions } from './mocketSessions'
 
 export const PlayingCard = ({
   movie,
-  index
+  index,
+  onClick
 }: {
   movie: Movie
   index: number
+  onClick: any
 }) => {
   const daysOfWeek = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab', 'Dom']
   const fakeDates = [
@@ -22,7 +24,7 @@ export const PlayingCard = ({
 
   return (
     <div className="flex w-full mb-14">
-      <div className="flex rounded-md">
+      <div className="flex rounded-md" onClick={onClick}>
         <Image
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
           alt={movie.title}

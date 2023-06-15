@@ -15,7 +15,7 @@ export type Movie = {
   vote_count: number
 }
 
-export type NowPlayingResponse = {
+export type TmdbResponse = {
   dates: {
     maximum: string
     minimum: string

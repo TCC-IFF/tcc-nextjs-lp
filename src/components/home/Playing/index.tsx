@@ -14,11 +14,14 @@ export const Playing = ({ playingMovies }: { playingMovies: Movie[] }) => {
 
   return (
     <>
-      <MovieModal
-        toggleModal={handleShowDatails}
-        movie={currentMovie}
-        visible={!!currentMovie}
-      />
+      {currentMovie && (
+        <MovieModal
+          toggleModal={handleShowDatails}
+          movie={currentMovie}
+          visible={!!currentMovie}
+        />
+      )}
+
       <section
         id="playing"
         className="flex flex-col w-full py-14 bg-slate-900 relative px-20"

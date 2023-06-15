@@ -24,7 +24,7 @@ export const PlayingCard = ({
 
   return (
     <div className="flex w-full mb-14">
-      <div className="flex rounded-md" onClick={onClick}>
+      <div className="relative flex rounded-md">
         <Image
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
           alt={movie.title}
@@ -32,6 +32,14 @@ export const PlayingCard = ({
           height={750}
           className="rounded-md"
         />
+        <div className="absolute hover:flex group transition-all items-end bottom-0 left-0 w-full h-full hover:bg-gradient-to-t from-slate-500 to-transparent">
+          <button
+            onClick={onClick}
+            className="w-full h-12 bg-rose-600 hidden group-hover:flex text-center text-white font-semibold items-center justify-center"
+          >
+            Ver mais
+          </button>
+        </div>
       </div>
       <div className="flex flex-col w-full ml-8 h-70">
         <div className="flex flex-col p-3 bg-rose-900 w-full rounded-lg">

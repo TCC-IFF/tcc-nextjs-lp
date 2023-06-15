@@ -1,9 +1,8 @@
 import { Movie } from '@/domains/types/tmdb'
 import Image from 'next/image'
-import { useState } from 'react'
 
 type MovieModalProps = {
-  movie?: Movie
+  movie: Movie
   visible: boolean
   toggleModal: (movie: Movie) => void
 }
@@ -17,10 +16,6 @@ export const MovieModal = ({
 
   const { title, backdrop_path: bannerSrc } = movie
   const synopsis = movie.overview
-  const director = 'Christopher Nolan'
-  const cast = ['Caio', 'João', 'Maria', 'José']
-
-  console.log(movie)
 
   return (
     <>
@@ -69,19 +64,6 @@ export const MovieModal = ({
                       <p className="text-sm text-gray-300 tracking-wide">
                         {synopsis}
                       </p>
-                      <p className="mt-2 text-sm text-rose-700 font-semibold">
-                        Diretor:{' '}
-                        <span className="text-gray-100 text-xs font-normal ml-2">
-                          {director}
-                        </span>
-                      </p>
-                      <p className="mt-2 text-sm text-rose-700 font-semibold">
-                        Elenco:{' '}
-                        <span className="text-gray-100 text-xs font-normal ml-2">
-                          {cast.join(', ')}
-                        </span>
-                      </p>
-                      <p></p>
                     </div>
                   </div>
                 </div>

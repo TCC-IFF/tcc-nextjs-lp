@@ -7,6 +7,8 @@ import {
 } from '@/components/home'
 import { TmdbResponse } from '@/domains/types/tmdb'
 
+export const dynamic = 'force-dynamic'
+
 async function getPlayingMoviesData(): Promise<TmdbResponse> {
   const url =
     'https://api.themoviedb.org/3/movie/now_playing?language=pt-br&page=1&region=BR'

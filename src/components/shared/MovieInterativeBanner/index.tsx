@@ -12,8 +12,8 @@ export const MovieInteractiveBanner = ({
       <Image
         src={`https://image.tmdb.org/t/p/w500${movieBanner}`}
         alt="Movie banner"
-        width={200}
-        height={750}
+        width={250}
+        height={350}
         className="rounded-md"
       />
       <div className="absolute hover:flex group transition-all rounded-b-md items-end bottom-0 left-0 w-full h-full hover:bg-gradient-to-t from-slate-500 to-transparent">

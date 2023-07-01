@@ -18,7 +18,7 @@ export const Navbar = () => {
       <div className="flex w-full justify-between max-w-7xl">
         <div>
           <h1 className="text-rose-500 font-bold font-mono text-xl tracking-wide">
-            CineTCC
+            CineTCC - Next
           </h1>
         </div>
         <div className="flex space-x-8">

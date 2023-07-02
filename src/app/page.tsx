@@ -5,7 +5,8 @@ import {
   Playing,
   Upcoming
 } from '@/components/home'
-import { TmdbResponse } from '@/domains/types/tmdb'
+import { Reviews } from '@/components/home/Reviews'
+import { Movie, TmdbResponse } from '@/domains/types/tmdb'
 
 export const dynamic = 'force-dynamic'
 
@@ -47,9 +48,9 @@ async function getUpcomingMoviesData(): Promise<TmdbResponse> {
   return res.json()
 }
 
-async function getPopularMoviesData(): Promise<TmdbResponse> {
-  const url =
-    'https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=12'
+async function getPopularMoviesData(): Promise<Movie[]> {
+  const totalPages = 10
+  const list: Movie[] = []
   const options = {
     method: 'GET',
     headers: {
@@ -57,13 +58,20 @@ async function getPopularMoviesData(): Promise<TmdbResponse> {
       Authorization: `Bearer ${process.env.TMDB_API_KEY}`
     }
   }
-  const res = await fetch(url, options)
+  for (let i = 1; i <= totalPages; i++) {
+    const url = `https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=${i}`
+    const res = await fetch(url, options)
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
+    if (!res.ok) {
+      throw new Error('Failed to fetch data')
+    }
+
+    const data: TmdbResponse = await res.json()
+
+    list.push(...data.results)
   }
 
-  return res.json()
+  return list
 }
 
 export default async function Home() {
@@ -71,13 +79,14 @@ export default async function Home() {
   const upcomingMoviesData = await getUpcomingMoviesData()
   const popularMoviesData = await getPopularMoviesData()
 
-  console.log(popularMoviesData)
+  console.log(popularMoviesData.length)
   return (
     <div className=" flex-col inline-block w-full h-screen bg-slate-900">
       <Navbar />
       <Header />
       <Playing playingMovies={playingMoviesData.results} />
       <Upcoming upcomingMovies={upcomingMoviesData.results} />
+      <Reviews popularMovies={popularMoviesData} />
       <Newsletter />
     </div>
   )

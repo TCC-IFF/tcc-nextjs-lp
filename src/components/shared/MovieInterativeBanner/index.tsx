@@ -5,7 +5,7 @@ export const MovieInteractiveBanner = ({
   onClick
 }: {
   movieBanner: string
-  onClick: () => void
+  onClick?: () => void
 }) => {
   return (
     <div className="relative flex rounded-md">

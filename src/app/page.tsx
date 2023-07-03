@@ -49,7 +49,7 @@ async function getUpcomingMoviesData(): Promise<TmdbResponse> {
 }
 
 async function getPopularMoviesData(): Promise<Movie[]> {
-  const totalPages = 10
+  const totalPages = 1
   const list: Movie[] = []
   const options = {
     method: 'GET',

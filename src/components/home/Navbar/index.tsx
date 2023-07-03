@@ -9,6 +9,10 @@ export const Navbar = () => {
       link: '#coming'
     },
     {
+      label: 'Blog',
+      link: '#blog'
+    },
+    {
       label: 'Newsletter',
       link: '#newsletter'
     }

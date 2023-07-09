@@ -24,7 +24,7 @@ export const Playing = ({ playingMovies }: { playingMovies: Movie[] }) => {
 
       <section
         id="playing"
-        className="flex flex-col w-full py-14 bg-slate-900 relative px-20"
+        className="flex flex-col w-full py-14 bg-slate-900 relative px-6 md:px-20"
       >
         <h2 className="flex w-full justify-center text-center text-5xl text-rose-700 font-bold tracking-wide mb-14">
           Em cartaz

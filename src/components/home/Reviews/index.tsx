@@ -13,12 +13,12 @@ export const Reviews = ({ popularMovies }: { popularMovies: Movie[] }) => {
     <>
       <section
         id="blog"
-        className="flex flex-col w-full pt-14 pb-36 bg-slate-900 relative px-20 justify-center items-center"
+        className="flex flex-col w-full pt-14 pb-36 bg-slate-900 relative px-6 md:px-20 justify-center items-center"
       >
         <h2 className="flex w-full justify-center text-center text-5xl text-rose-700 font-bold tracking-wide mb-14">
           Resenhas e Críticas
         </h2>
-        <div className="grid grid-cols-4 max-w-6xl gap-8 items-center justify-center justify-items-center content-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 max-w-6xl gap-8 items-center justify-center justify-items-center content-center">
           {popularMovies.map(
             (movie: Movie, index) =>
               movie.poster_path &&

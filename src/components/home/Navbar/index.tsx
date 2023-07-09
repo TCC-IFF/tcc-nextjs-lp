@@ -18,14 +18,14 @@ export const Navbar = () => {
     }
   ]
   return (
-    <nav className="fixed left-0 top-0 z-40 flex w-full h-16 min-h-16 bg-slate-800 items-center px-20 justify-center ">
+    <nav className="fixed left-0 top-0 z-40 flex w-full h-12 md:h-16 min-h-16 bg-slate-800 items-center px-6 md:px-20 justify-center ">
       <div className="flex w-full justify-between max-w-7xl">
         <div>
-          <h1 className="text-rose-500 font-bold font-mono text-xl tracking-wide">
+          <h1 className="text-rose-500 font-bold font-mono text-lg md:text-xl tracking-wide">
             CineTCC - Next
           </h1>
         </div>
-        <div className="flex space-x-8">
+        <div className="hidden md:flex space-x-8">
           {menuItems.map(item => (
             <a
               key={item.link}

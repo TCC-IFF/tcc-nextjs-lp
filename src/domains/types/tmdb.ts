@@ -25,3 +25,8 @@ export type TmdbResponse = {
   total_pages: number
   total_results: number
 }
+
+export enum ReviewSectionPreLoadSize {
+  BIG = 10,
+  SMALL = 1
+}

@@ -6,7 +6,11 @@ import {
   Upcoming
 } from '@/components/home'
 import { Reviews } from '@/components/home/Reviews'
-import { Movie, TmdbResponse } from '@/domains/types/tmdb'
+import {
+  Movie,
+  ReviewSectionPreLoadSize,
+  TmdbResponse
+} from '@/domains/types/tmdb'
 
 export const dynamic = 'force-dynamic'
 
@@ -49,7 +53,7 @@ async function getUpcomingMoviesData(): Promise<TmdbResponse> {
 }
 
 async function getPopularMoviesData(): Promise<Movie[]> {
-  const totalPages = 1
+  const totalPages = ReviewSectionPreLoadSize.SMALL
   const list: Movie[] = []
   const options = {
     method: 'GET',

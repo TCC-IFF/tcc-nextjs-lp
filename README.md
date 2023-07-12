@@ -1,38 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CineTCC - React
 
-## Getting Started
+Este é um projeto desenvolvido em React.js para fins de estudo e experimentação.
 
-First, run the development server:
+## Descrição
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Este projeto é uma Landing Page desenvolvida em Next.js, utilizando a técnica de renderização no lado do servidor, também conhecida como Server Side Rendering (SSR). O objetivo é comparar a performance, a experiência do usuário e a indexação por motores de busca desta abordagem SSR com uma similar implementada via Client Side Rendering (CSR) com React.js.
+A aplicação em React está disponível [nesse repositório](https://github.com/TCC-IFF/tcc-react-lp)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Configuração
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para rodar este projeto localmente, é necessário ter o Node.js e npm/yarn instalados em seu sistema. Além disso, será necessário uma chave de acesso para consumir a [API do TMDB](https://developer.themoviedb.org/reference/intro/getting-started)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- Clone o repositório: 
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<!--sec data-title="Prompt: OS X and Linux" data-id="OSX_Linux_prompt" data-collapse=true ces-->
+    $ git clone https://github.com/TCC-IFF/tcc-nextjs-lp.git
+<!--endsec-->
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+</br>
+  
+- Entre na pasta do projeto e instale as dependências: 
+<!--sec data-title="Prompt: OS X and Linux" data-id="OSX_Linux_prompt" data-collapse=true ces-->
+    $ npm install
+<!--endsec-->
+ou 
+<!--sec data-title="Prompt: OS X and Linux" data-id="OSX_Linux_prompt" data-collapse=true ces-->
+    $ yarn install
+<!--endsec-->
 
-## Learn More
+### Ajustando a Complexidade da Aplicação
 
-To learn more about Next.js, take a look at the following resources:
+Você pode alterar a complexidade da aplicação ao ajustar o número de requisições e o tamanho da DOM. Para fazer isso, siga as instruções abaixo:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Abra o arquivo `src/app/page.tsx` e encontre a função `getPopularMoviesData`;
+2. Altere o valor da constante `totalPage` para `ReviewSectionPreLoadSize.BIG` ou `ReviewSectionPreLoadSize.SMALL`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  O `.SMALL` corresponde a um número menor de requisições e um tamanho de DOM menor, enquanto o `.BIG` irá aumentar ambas as quantidades.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Rodando o Projeto
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Para iniciar o servidor de desenvolvimento:
+<!--sec data-title="Prompt: OS X and Linux" data-id="OSX_Linux_prompt" data-collapse=true ces-->
+    $ yarn dev
+<!--endsec-->
+ou 
+<!--sec data-title="Prompt: OS X and Linux" data-id="OSX_Linux_prompt" data-collapse=true ces-->
+    $ npm dev
+<!--endsec-->
+
+Visite `http://localhost:3000` no seu navegador para ver a aplicação em ação.

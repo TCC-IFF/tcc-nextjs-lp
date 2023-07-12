@@ -1,4 +1,4 @@
-# CineTCC - React
+# CineTCC - Next
 
 Este é um projeto desenvolvido em React.js para fins de estudo e experimentação.
 

@@ -1,6 +1,6 @@
 # CineTCC - Next
 
-Este é um projeto desenvolvido em React.js para fins de estudo e experimentação.
+Este é um projeto desenvolvido em Next.js para fins de estudo e experimentação.
 
 ## Descrição
 

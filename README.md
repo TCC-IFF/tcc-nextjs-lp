@@ -33,7 +33,7 @@ ou
 Você pode alterar a complexidade da aplicação ao ajustar o número de requisições e o tamanho da DOM. Para fazer isso, siga as instruções abaixo:
 
 1. Abra o arquivo `src/app/page.tsx` e encontre a função `getPopularMoviesData`;
-2. Altere o valor da constante `totalPage` para `ReviewSectionPreLoadSize.BIG` ou `ReviewSectionPreLoadSize.SMALL`.
+2. Altere o valor da constante `totalPages` para `ReviewSectionPreLoadSize.BIG` ou `ReviewSectionPreLoadSize.SMALL`.
 
   O `.SMALL` corresponde a um número menor de requisições e um tamanho de DOM menor, enquanto o `.BIG` irá aumentar ambas as quantidades.
 
